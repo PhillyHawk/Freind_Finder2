@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Friend Finder</title>
+  
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!-- Chosen -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <!-- modal here-->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Here's Your Match</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id="matchName" class="modal-body">
+          <img id="matchImg" class="img-fluid" style="max-width:100%; height:auto;" src="">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="jumbotron">
+      <div class="mainTitle">
+        <h1>Friend Finder</h1>
+      </div>
+      <hr>
+      <h2 class="mainTitle">Answer a few common questions.</h2>
+      <hr>
+      <form>
+        <div class="form-group">
+          <h4 style="text-align: left">Your Name (Required)</h4>
+          <input type="text" class="form-control" id="friendName" placeholder="Enter Your Name">
+          <h4 style="text-align: left">Link to photo (Required)</h4>
+          <input type="text" class="form-control" id="friendPhoto" placeholder="Enter Your Name">
+          <hr />
+        </div>
+        <h3><strong>Question 1</strong></h3>
+        <h4>What's Your Favorite Color</h4>
+        <select data-placeholder="" class="chosen-select" id="q1">
+          <option value=""></option>
+          <option value="1" style="background:green">Green</option>
+          <option value="2">Blue</option>
+          <option value="3">Orange</option>
+          <option value="4">Pink</option>
+          <option value="5">Black</option>
+          <option value="6">Red</option>
+        </select>
+        <h3><strong>Question 2</strong></h3>
+        <h4>What Do You Do At Parties?</h4>
+        <select data-placeholder="" class="chosen-select" id="q2">
+          <option value=""></option>
+          <option value="1">Bring food for everyone</option>
+          <option value="2">Play DJ,I bring the music</option>
+          <option value="3">I make friends with the house pets</option>
+          <option value="4">I take selfies and make sure evryone knows I'm there</option>
+          <option value="5">I jump into party games</option>
+          <option value="6">I try and start a conversation with someone</option>
+        </select>
+        <h3><strong>Question 3</strong></h3>
+        <h4>What is Your Favorite Season?</h4>
+        <select data-placeholder="" class="chosen-select" id="q3">
+          <option value=""></option>
+          <option value="1">Spring</option>
+          <option value="2">Summer</option>
+          <option value="3">Fall</option>
+          <option value="4">winter</option>
+        </select>
+
+        <h3><strong>Question 4</strong></h3>
+        <h4>My Go-TO Beverage Is?</h4>
+        <select data-placeholder="" class="chosen-select" id="q4">
+          <option value=""></option>
+          <option value="1">Wine</option>
+          <option value="2">Coffee</option>
+          <option value="3">Water</option>
+          <option value="4">Kombucha</option>
+          <option value="5">Margarita</option>
+          <option value="6">Beer</option>
+        </select>
+
+        <h3><strong>Question 5</strong></h3>
+        <h4>Which Would Be Your Go-To First Date?</h4>
+        <select data-placeholder="" class="chosen-select" id="q5">
+          <option value=""></option>
+          <option value="1">Dinner and a show</option>
+          <option value="2">Cooking dinner at home</option>
+          <option value="3">Picnic and bike ride in the park</option>
+          <option value="4">Drinks and dancing at the club</option>
+          <option value="5">Music festival</option>
+          <option value="6">Hot Air Ballon ride</option>
+        </select>
+
+        <h3><strong>Question 6</strong></h3>
+        <h4>Which Word Best Describe You?</h4>
+        <select data-placeholder="" class="chosen-select" id="q6">
+          <option value=""></option>
+          <option value="1">Classic and Refined</option>
+          <option value="2">Reliable and Easy Going</option>
+          <option value="3">Glittering and Charming</option>
+          <option value="4">Dignified nd Mysterious</option>
+          <option value="5">Modern and Stylish</option>
+          <option value="6">Carefree and Creative</option>
+        </select>
+
+        <h3><strong>Question 7</strong></h3>
+        <h4>What's Your Favorite Kind of Vacation?</h4>
+        <select data-placeholder="" class="chosen-select" id="q7">
+          <option value=""></option>
+          <option value="1">Beach</option>
+          <option value="2">Cultural</option>
+          <option value="3">Active</option>
+          <option value="4">Exotic</option>
+          <option value="5">Amusement Park</option>
+          <option value="6">Road Trip</option>
+        </select>
+
+        <h3><strong>Question 8</strong></h3>
+        <h4>What Is Your Spirit Animal?</h4>
+        <select data-placeholder="" class="chosen-select" id="q8">
+          <option value=""></option>
+          <option value="1">Horse</option>
+          <option value="2">Tiger</option>
+          <option value="3">Peacock</option>
+          <option value="4">Corgi</option>
+          <option value="5">Wolf</option>
+        </select>
+
+        <h3><strong>Question 9</strong></h3>
+        <h4>What are Your Typical Mornings Like?</h4>
+        <select data-placeholder="" class="chosen-select" id="q9">
+          <option value=""></option>
+          <option value="1">Hiting the gym and then off to work</option>
+          <option value="2">Blasting music while I shower and get ready for work</option>
+          <option value="3">I typiaclly do not rise till noon</option>
+          <option value="4">Rolling out of bed and running to work</option>
+          <option value="5">Taking my time to make breakfast and head out to work on time</option>
+        </select>
+
+        <h3><strong>Question 10</strong></h3>
+        <h4>What's Your Texting Style?</h4>
+        <select data-placeholder="" class="chosen-select" id="q10">
+          <option value=""></option>
+          <option value="1">Short</option>
+          <option value="2">Full sentences with correct grammar</option>
+          <option value="3">I just txt as quickly as pssible whtevr</option>
+          <option value="4">Emoji city</option>
+          <option value="5">IDK I rarely text</option>
+          <option value="6">I'm an over-texter</option>
+        </select>
+        <br />
+        <br />
+        <button type="button" id="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          Submit
+        </button>
+        <!-- Modal -->
+
+        <br />
+        <br />
+      </form>
+    </div>
+  </div>
+
+
+  <script type="text/javascript">
+
+    $("#submit").on("click", function (event) {
+
+      event.preventDefault();
+      function validateForm() {
+        var isValid = true;
+        $(".form-control").each(function () {
+          if ($(this).val() === "") {
+            isValid = false;
+          }
+        });
+        $(".chosen-select").each(function () {
+
+          if ($(this).val() === "") {
+            isValid = false;
+          }
+        });
+        return isValid;
+
+      }
+      if (validateForm()) {
+        var userData = {
+          name: $("#friendName").val(),
+          photo: $("#friendPhoto").val(),
+          scores: [
+            parseInt($("#q1").val()),
+            parseInt($("#q2").val()),
+            parseInt($("#q3").val()),
+            parseInt($("#q4").val()),
+            parseInt($("#q5").val()),
+            parseInt($("#q6").val()),
+            parseInt($("#q7").val()),
+            parseInt($("#q8").val()),
+            parseInt($("#q9").val()),
+            parseInt($("#q10").val())
+          ]
+        };
+        console.log(userData.scores);
+
+        // var currentURL = window.location.origin;
+        $.post("/api/friend", userData, function (data) {
+          console.log(data)
+          $("#matchName").append(data.name);
+          $("#matchImg").attr("src", data.photo);
+          $('#exampleModal').modal('toggle')
+        });
+      } else {
+        alert("Please fill out all fields before submitting!");
+      }
+      return false;
+    });
+
+  </script>
+
+</body>
+
+</html>
