@@ -16,7 +16,7 @@ var friends =[
 },
 {
   name:"Sonja Morgan",
-  photo:"https://pbs.twimg.com/profile_images/1096399755721277440/ge5bJmNN.jpg",
+  photo:"https://media.giphy.com/media/3ohryxXHKtvsxY6CuQ/giphy.gif",
   scores: [1, 6, 2, 1, 4, 2, 5, 4, 2, 5]
 },
 {
